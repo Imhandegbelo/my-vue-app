@@ -1,11 +1,18 @@
 <script setup>
-import jobData from "@/jobs.json"
+// import jobData from "@/jobs.json"
 import JobListing from "@/components/JobListing.vue"
-import { ref, defineProps } from "vue"
+import axios from "axios"
+import { ref, onMounted } from "vue"
 
-const jobs = ref(jobData)
-defineProps({
-    limit: Number
+const jobs = ref([])
+
+onMounted(async () => {
+    try {
+        const response = await axios.get("http://localhost:3000/jobs")
+        jobs.value = response.data
+    } catch (error) {
+        console.log("Error fetching jobs::", error)
+    }
 })
 
 </script>
@@ -19,6 +26,6 @@ defineProps({
         </div>
     </section>
     <div class="grid md:grid-cols-3 gap-6 p-6">
-        <JobListing v-for="job in jobs.slice(0, limit || jobs.length)" :key="job.id" :job="job" />
+        <JobListing v-for="job in jobs" :key="job.id" :job="job" />
     </div>
 </template>
