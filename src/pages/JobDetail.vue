@@ -127,10 +127,10 @@ function downloadPDF(job) {
                             class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
                             Download Detail
                         </button>
-                        <button @click="downloadStyledPDF(state.job.id, state.job.title)"
+                        <!-- <button @click="downloadStyledPDF(state.job.id, state.job.title)"
                             class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
                             Download Job Detail
-                        </button>
+                        </button> -->
                     </div>
                 </aside>
             </div>
