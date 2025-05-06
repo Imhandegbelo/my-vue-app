@@ -27,8 +27,6 @@ const isActiveLink = (routeLink) => {
                     {{ link.title }}
                 </RouterLink>
             </li>
-            <!-- <li><a href="/job">Jobs</a></li>
-            <li><a href="/add">Add Job</a></li> -->
         </ul>
     </nav>
 </template>
